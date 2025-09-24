@@ -14,7 +14,7 @@ const DroneScene: React.FC = () => {
 
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff); // dark green
+    scene.background = new THREE.Color(0x000000); // dark green
     sceneRef.current = scene;
 
     // Camera

@@ -100,7 +100,7 @@ function App() {
         <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
          <div className="w-12 h-11 bg-white rounded-lg flex items-center justify-center p-1">
           <img
-            src="/src/assets/Logo.png"
+            src="/Logo.png"
             alt="RCLAE Logo"
             className="w-full h-full object-contain"
           />

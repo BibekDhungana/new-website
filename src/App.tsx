@@ -98,17 +98,23 @@ function App() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-black/30 border-b border-slate-800">
         <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-indigo-500 rounded-lg flex items-center justify-center text-black font-bold">
-              R
-            </div>
-            <div className="font-semibold">Research Center of Low Altitude Economy</div>
-          </div>
+         <div className="w-12 h-11 bg-white rounded-lg flex items-center justify-center p-1">
+          <img
+            src="/src/assets/Logo.png"
+            alt="RCLAE Logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div className="font-bold text-white text-white text-xl md:text-2xl">
+          Research Center of Low Altitude Economy
+        </div>
+
           <div className="flex items-center gap-4 text-sm">
             <a href="#about" className="hover:text-white/90">About</a>
             <a href="#services" className="hover:text-white/90">Sectors</a>
             <a href="#fleets" className="hover:text-white/90">Fleets</a>
             <a href="#projects" className="hover:text-white/90">Projects</a>
+            <a href="#dashboard" className="hover:text-white/90">Dashboard</a>
             <a href="#contact" className="hover:text-white/90">Contact</a>
           </div>
         </nav>
@@ -130,7 +136,8 @@ function App() {
               </p>
             </div>
             <div className="h-96 rounded-2xl overflow-hidden border border-slate-800 bg-black/20">
-              <DroneScene />
+              <DroneScene width={500} height={400} />
+
             </div>
           </div>
         </section>

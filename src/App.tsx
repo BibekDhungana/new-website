@@ -230,7 +230,7 @@ function App() {
 
             <div className="space-y-4 text-slate-300">
               <div className="flex items-center gap-3">
-                <FiMapPin /> Thapathali Campus, Kathmandu, Nepal
+                <FiMapPin /> Buddhanagar, Kathmandu, Nepal
               </div>
               <div className="flex items-center gap-3">
                 <FiMail /> rclae@outlook.com

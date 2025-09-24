@@ -98,7 +98,7 @@ function App() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-black/30 border-b border-slate-800">
         <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-         <div className="w-12 h-11 bg-white rounded-lg flex items-center justify-center p-1">
+         <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-1">
           <img
             src="/Logo.png"
             alt="RCLAE Logo"
@@ -230,7 +230,7 @@ function App() {
 
             <div className="space-y-4 text-slate-300">
               <div className="flex items-center gap-3">
-                <FiMapPin /> Thapathali Campus, Kathmandu, Nepal
+                <FiMapPin /> Buddhanagar, Kathmandu, Nepal
               </div>
               <div className="flex items-center gap-3">
                 <FiMail /> rclae@outlook.com

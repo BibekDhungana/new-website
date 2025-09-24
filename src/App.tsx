@@ -2,8 +2,83 @@ import React from "react";
 import DroneScene from "./components/DroneScene";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement } from "chart.js";
+import { Bar, Pie, Line } from "react-chartjs-2";
 
+// 1️⃣ Register Chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  PointElement,
+  LineElement
+);
+
+// 2️⃣ Dashboard component (outside App)
+const Dashboard: React.FC = () => {
+  const serviceData = {
+    labels: ["Logistics", "Agriculture", "Environment"],
+    datasets: [
+      {
+        label: "Services Provided",
+        data: [120, 90, 60],
+        backgroundColor: ["#3b82f6", "#10b981", "#f59e0b"],
+      },
+    ],
+  };
+
+  const salesData = {
+    labels: ["Quad 5kg", "Hex 10kg", "Heavy 30kg", "VTOL", "Fixed Wing"],
+    datasets: [
+      {
+        label: "Drones Sold",
+        data: [25, 15, 10, 12, 8],
+        backgroundColor: ["#6366f1", "#f43f5e", "#22c55e", "#eab308", "#0ea5e9"],
+      },
+    ],
+  };
+
+  const growthData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Business Growth",
+        data: [10, 20, 35, 50, 70, 90],
+        borderColor: "#3b82f6",
+        backgroundColor: "rgba(59,130,246,0.3)",
+        fill: true,
+      },
+    ],
+  };
+
+  return (
+    <section id="dashboard" className="py-20 bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-3xl font-bold mb-10">Company Dashboard</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-slate-800 p-6 rounded-2xl shadow-lg">
+            <h3 className="mb-4 font-semibold text-lg">Services Provided</h3>
+            <Bar data={serviceData} />
+          </div>
+          <div className="bg-slate-800 p-6 rounded-2xl shadow-lg">
+            <h3 className="mb-4 font-semibold text-lg">Drone Sales</h3>
+            <Pie data={salesData} />
+          </div>
+          <div className="bg-slate-800 p-6 rounded-2xl shadow-lg md:col-span-2 lg:col-span-1">
+            <h3 className="mb-4 font-semibold text-lg">Growth Trend</h3>
+            <Line data={growthData} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 function App() {
+
   const services = [
     "Logistics & Delivery: Medical, hydropower, high-altitude camps",
     "Agriculture & Precision Farming: Spraying, AI crop monitoring, transport",
@@ -104,6 +179,8 @@ function App() {
           <h2 className="text-3xl font-bold">Projects</h2>
           <div className="mt-6 text-slate-400">Coming Soon...</div>
         </section>
+        {/* Dashboard */}
+        <Dashboard />
 
         {/* Contact */}
         <section id="contact" className="max-w-4xl mx-auto px-6 py-14">
